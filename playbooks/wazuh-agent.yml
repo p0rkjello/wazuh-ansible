@@ -1,8 +1,4 @@
 ---
-- hosts: all:!{{ wazuh-manager }}
-  become: yes
+- hosts: all:!wazuh-manager
   roles:
-    - ansible-wazuh-agent
-  vars:
-    wazuh_managers:
-      - address: {{ wazuh-manager }}  
+   - ansible-wazuh-agent
